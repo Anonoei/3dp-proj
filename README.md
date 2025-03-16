@@ -13,3 +13,5 @@
 
 ### [XestBurner](https://github.com/Anonoei/3dp-proj/tree/main/XestBurner)
  Modular toolhead
+
+![image](XestBurner/demo.png)
