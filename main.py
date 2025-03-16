@@ -1,7 +1,6 @@
 import argparse
 import pathlib
 import os
-import sys
 
 ROOT = pathlib.Path(__file__).parent
 projects = ["all"]
@@ -47,8 +46,6 @@ def main():
             process_args(args)
     else:
         process_args(args)
-
-
 
 
 if __name__ == "__main__":
