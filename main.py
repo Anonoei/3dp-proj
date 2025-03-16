@@ -29,7 +29,7 @@ def action_export(args):
 
 def action_image(args):
     path  = (ROOT / args.project)
-    cmd = f"openscad -o {path / 'demo.png'} {path / 'demo.scad'}"
+    cmd = f"openscad -o {path / 'demo.png'} --colorscheme Starnight {path / 'demo.scad'}"
     print(f"Running '{cmd}'")
     os.system(cmd)
 
