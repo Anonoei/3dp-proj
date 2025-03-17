@@ -11,5 +11,5 @@ d_tb_m_y = 9;
 
 include <../../lib/Chamfer.scad>
 
-include <mount.scad>
-include <adapters.scad>
+include <outer.scad>
+include <inner.scad>
