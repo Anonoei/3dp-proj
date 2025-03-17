@@ -38,7 +38,7 @@ module tb_inner_ecas04_pc4_m6() {
         _tb_outer();
         // translate([0,0,-3])
         //     cylinder(h=20,d=3);
-        translate([0,0,5])
+        translate([0,0,5.001])
             ecas04();
     }
 }
