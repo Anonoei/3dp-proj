@@ -1,8 +1,8 @@
 include <src/main.scad>
 
 module ex_ecas() {
-    tb_mount();
-    adapter_ecas04();
+    tb_mount_m3();
+    adapter_ecas04_pc4_m6();
 }
 
 rotate([90,0,0]) {

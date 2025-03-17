@@ -1,3 +1,3 @@
 include <../src/main.scad>
 
-adapter_PC4_M6();
+adapter_ecas04_pc4_m6();

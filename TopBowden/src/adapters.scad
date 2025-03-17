@@ -19,7 +19,7 @@ module adapter_ecas04() {
     ecas04_h = 8;
     ecas04_h_1 = 2.4;
     module ecas04() {
-        cylinder(d=ecas04_d + 0.3, h=ecas04_h);
+        cylinder(d=ecas04_d + 0.3, h=ecas04_h+0.001);
         translate([0,0,0])
             cylinder(d=ecas04_d+1, h=ecas04_h-ecas04_h_1);
     }
@@ -32,6 +32,31 @@ module adapter_ecas04() {
         translate([0,0,-1])
             cylinder(h=20,d=3);
         translate([0,0,1])
+            ecas04();
+    }
+}
+
+module adapter_ecas04_pc4_m6() {
+    ecas04_d = 8.1;
+    ecas04_d_1 = 10;
+    ecas04_h = 8;
+    ecas04_h_1 = 2.4;
+    module ecas04() {
+        cylinder(d=ecas04_d + 0.3, h=ecas04_h+0.001);
+        translate([0,0,0])
+            cylinder(d=ecas04_d+1, h=ecas04_h-ecas04_h_1);
+    }
+    module _tb_center() {
+        adapter_PC4_M6();
+        translate([0,0,5])
+            cylinder(h=8,d=12);
+    }
+
+    difference() {
+        _tb_center();
+        // translate([0,0,-3])
+        //     cylinder(h=20,d=3);
+        translate([0,0,5])
             ecas04();
     }
 }
