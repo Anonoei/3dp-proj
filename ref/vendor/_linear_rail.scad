@@ -1,6 +1,6 @@
-include <./components.scad>
+include <../components.scad>
 
-module linear_rail(l,h,w,E,P) {
+module ref_linear_rail(l,h,w,E,P) {
     // w_r = 12;
     // h_r = 8;
     // D = 6;
@@ -48,7 +48,7 @@ module linear_rail(l,h,w,E,P) {
         }
 }
 
-module carriage(l,w,h,c,b) {
+module ref_linear_rail_carriage(l,w,h,c,b) {
     // w = 27;
     // b = 20;
     // b_1 = 3.5;
