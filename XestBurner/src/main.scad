@@ -1,8 +1,10 @@
 $fa = 1;
 $fs = 0.4;
 
-include <../../ref/rails.scad>
+include <../../lib/Chamfer.scad>
+
 include <../../ref/components.scad>
+include <../../ref/vendor.scad>
 
 // ----- Base components ----- //
 include <./dimensions.scad>

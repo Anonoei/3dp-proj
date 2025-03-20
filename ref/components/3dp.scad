@@ -1,16 +1,18 @@
 module heatset(d=5,h=4,b=3,H=0) {
-    cylinder(h=h, d=d, center=true);
-    translate([0,0,h])
-        bolt(d=3, h=H);
+    // d = inset diameter
+    // h = height (length)
+    // b = bolt diameter
+    // H = bolt height
+    union() {
+        translate([0,0,0.01])
+            cylinder(h=h+0.02, d=d, center=true);
+        translate([0,0,h/2])
+            bolt(d=b, h=H);
+    }
 }
 
-module heatset_m3x4(H=0) {
-    translate([0,0,2.5/2-0.008])
-    cylinder(h=2.5+0.004,d=5, center=true);
-    translate([0,0,3.25])
-        cylinder(h=1.5, d=4.25, center=true);
-    translate([0,0,4])
-        bolt(d=3,h=H);
+module heatset_m3x4(H=0) { // VORON BOM heatset
+    heatset(d=4.3, h=4+0.1, b=3+0.2, H=H);
 }
 
 module ecas04() { // This is used to cut a spot for an ECAS04 fitting
