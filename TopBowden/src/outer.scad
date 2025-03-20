@@ -45,19 +45,19 @@ module tb_outer_m3() {
 module tb_outer_hs() {
     difference() {
         _tb_base();
-        translate([0,-d_tb_m_o,d_tb_h-2+0.002]) {
+        translate([0,-d_tb_m_o,d_tb_h]) {
             rotate([180,0,0]) {
-                heatset(H=5);
+                heatset_m3x4(H=5);
             }
         }
-        translate([d_tb_m_x,d_tb_m_y,d_tb_h-2+0.002]) {
+        translate([d_tb_m_x,d_tb_m_y,d_tb_h]) {
             rotate([180,0,0]) {
-                heatset(H=5);
+                heatset_m3x4(H=5);
             }
         }
-        translate([-d_tb_m_x,d_tb_m_y,d_tb_h-2+0.002]) {
+        translate([-d_tb_m_x,d_tb_m_y,d_tb_h]) {
             rotate([180,0,0]) {
-                heatset(H=5);
+                heatset_m3x4(H=5);
             }
         }
     }
