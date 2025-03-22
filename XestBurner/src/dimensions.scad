@@ -25,4 +25,4 @@ d_cr_pr_wire = 4;
 // Extruder mount
 d_cr_em_w = d_cr_w;
 d_cr_em_h = 9;
-d_cr_em_d = 10;
+d_cr_em_d = 8;
