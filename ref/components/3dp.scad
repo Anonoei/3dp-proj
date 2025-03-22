@@ -4,9 +4,9 @@ module heatset(d=5,h=4,b=3,H=0) {
     // b = bolt diameter
     // H = bolt height
     union() {
-        translate([0,0,0.01])
+        translate([0,0,h/2-0.01])
             cylinder(h=h+0.02, d=d, center=true);
-        translate([0,0,h/2])
+        translate([0,0,h+H/2 - 0.01])
             bolt(d=b, h=H);
     }
 }

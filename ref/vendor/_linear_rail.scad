@@ -62,14 +62,14 @@ module ref_linear_rail_carriage(l,w,h,c,b) {
         cube([l, h, w], center=true);
         rotate([90,0,0]) {
             translate([0,0,5]) {
-                translate([c/2,b/2,0])
-                    bolt(d=20); // top right
-                translate([c/2,-b/2,0])
-                    bolt(d=20); // bottom right
-                translate([-c/2,b/2,0])
-                    bolt(d=20); // top left
-                translate([-c/2,-b/2,0])
-                    bolt(d=20); // bottom left
+                translate([c/2,b/2,-3]) // top right
+                    bolt(d=3, h=20);
+                translate([c/2,-b/2,0]) // bottom right
+                    bolt(d=3, h=20);
+                translate([-c/2,b/2,0]) // top left
+                    bolt(d=3, h=20);
+                translate([-c/2,-b/2,0]) // bottom left
+                    bolt(d=3, h=20);
             }
         }
     }

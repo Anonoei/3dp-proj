@@ -1,5 +1,5 @@
 module bolt(d, h=8) {
-    cylinder(d=d, h=h + 0.001, center=true);
+    cylinder(d=d, h=h, center=true);
 }
 
 module bolt_shcs_m3(h=8) {
