@@ -4,7 +4,7 @@ include <src/main.scad>
 // xb_cr_mgn9h();
 
 translate([0,11.2,0])
-    ven_mgn12h();
+    ven_mgn12h(100);
 color(c_cr) xb_cr_mgn12h();
 
 xb_cr_belt_pin();
