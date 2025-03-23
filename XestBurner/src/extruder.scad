@@ -20,7 +20,7 @@ module xb_em() {
             _em_base();
             xb_em_cut();
             xb_cr_hs_he();
-            xb_cr_probe_cut();
+            xb_cr_pr_wire_cut();
         }
     }
 

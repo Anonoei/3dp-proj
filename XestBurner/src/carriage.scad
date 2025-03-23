@@ -66,7 +66,16 @@ module xb_cr_em() { // Extruder mount
         _xb_cr_em();
 }
 
-module xb_cr_probe_cut() {
+module xb_cr_pr_cut() {
+    translate([0,0,-d_cr_hb-0.01])
+        difference() {
+            cylinder(d=20,h=5, $fn=6);
+            translate([0,-10,0.01])
+                cube([20,10,10], center=true);
+        }
+}
+
+module xb_cr_pr_wire_cut() {
     union() {
         translate([0,d_cr_pr_wire/2+0.01,0])
         rotate([90,90,0]) {
@@ -156,15 +165,17 @@ module xb_cr() {
         difference() {
             xb_cr_base();
             xb_cr_hs_he(); xb_cr_hs_fh();
-            xb_cr_probe_cut();
+            xb_cr_pr_wire_cut();
             xb_cr_belt_cut();
+            xb_cr_pr_cut();
         }
         xb_cr_pr();
         difference() {
             xb_cr_em();
             // xb_cr_hs_em();
-            xb_cr_probe_cut();
+            xb_cr_pr_wire_cut();
             xb_cr_belt_cut();
         }
     }
+
 }

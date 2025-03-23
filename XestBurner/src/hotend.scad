@@ -1,6 +1,6 @@
 module xb_he_bolts() {
     module _xb_he_bolt() {
-        translate([d_m_he_w/2,-30-2,d_m_he_h])
+        translate([d_m_he_w/2,-31-2,d_m_he_h])
         rotate([-90,-90,0])
             bolt_shcs_m3(h=30);
     }
@@ -15,7 +15,7 @@ module xb_he_mount() {
     module _xb_he_mount() {
         translate([d_m_he_w/2-5,-54,d_m_he_h+5])
         rotate([0,75,0])
-            cube([15,25,10]);
+            cube([15,24,10]);
     }
     union() {
         _xb_he_mount();

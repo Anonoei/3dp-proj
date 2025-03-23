@@ -21,6 +21,7 @@ include <./carriage.scad>
 include <./extruder.scad>
 include <./fan_housing.scad>
 include <./hotend.scad>
+include <./probe.scad>
 
 
 // ----- Carriages ----- //
