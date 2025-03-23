@@ -3,6 +3,8 @@
 
 ![image](demo.png)
 
+## **This is WORK-IN-PROGRESS**
+
 ## Description
  This toolhead was heavily inspired by the amazing work done for  [Xol](https://github.com/Armchair-Heavy-Industries/Xol-Toolhead), and [Dragonburner](https://github.com/chirpy2605/voron/tree/main/V0/Dragon_Burner)
 
@@ -40,3 +42,14 @@
  - Probe
    - 2x M3x6 SHCS (BHCS works as well)
    - Dependent on variation
+
+## Printed parts
+ - [Fan Housing](https://github.com/Anonoei/3dp-proj/blob/main/XestBurner/STLs/XB-fan-housing.stl)
+ - Carriage
+   - [MGN12H](https://github.com/Anonoei/3dp-proj/blob/main/XestBurner/STLs/XB-carriage_MGN12.stl)
+ - Hotends
+   - [CHUBE](https://github.com/Anonoei/3dp-proj/blob/main/XestBurner/STLs/XB-hotend_chube.stl)
+ - Extruders
+   - [Sherpa Mini](https://github.com/Anonoei/3dp-proj/blob/main/XestBurner/STLs/XB-extruder_sherpa-mini.stl)
+ - Probe
+   - [Klicky PCB](https://github.com/Anonoei/3dp-proj/blob/main/XestBurner/STLs/XB-probe_klicky-pcb.stl)
