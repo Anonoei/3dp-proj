@@ -67,12 +67,22 @@ module xb_cr_em() { // Extruder mount
 }
 
 module xb_cr_pr_cut() {
-    translate([0,0,-d_cr_hb-0.01])
-        difference() {
-            cylinder(d=20,h=5, $fn=6);
-            translate([0,-10,0.01])
-                cube([20,10,10], center=true);
-        }
+    b = -(d_cr_d-3);
+    f = d_cr_pr_d;
+    l1 = d_cr_pr_o - d_cr_w-2;
+    l2 = d_cr_pr_o - d_cr_w;
+    module _xb_pr_cut() {
+        translate([0,0,-d_cr_hb-0.01])
+        linear_extrude(5+0.02) polygon(
+            points=[
+                [-0.01,b], [l1,b], [l2,0.01],
+                [l2,f], [-0.01,f]
+            ]
+        );
+    }
+    _xb_pr_cut();
+    mirror([d_cr_pr_o,0,0])
+        _xb_pr_cut();
 }
 
 module xb_cr_pr_wire_cut() {
