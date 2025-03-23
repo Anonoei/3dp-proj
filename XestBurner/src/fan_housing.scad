@@ -2,7 +2,6 @@ module xb_fh_2510_cut() {
     translate([0,-20,-2.5])
     rotate([90,90,0]) {
         for (i=[10,-10]) {
-            echo(i);
             translate([i,i,0]) {
                 bolt(d=3,h=20);
             }
@@ -18,7 +17,7 @@ module xb_fh_2510_cut() {
 module xb_fh() {
     module _xb_fh_4010() {
         module _xb_fh_4010_base() {
-            translate([-d_max_w/2,0,d_cr_fh_h-5]) {
+            translate([-d_max_w/2,0,d_m_fh_h-5]) {
                 difference() {
                     translate([0,0,0])
                         cube([14,42,44]);
@@ -32,16 +31,24 @@ module xb_fh() {
                 translate([0,0,40])
                     cube([4,5,2]);
                 translate([14,40,0])
-                    cube([5,2,8]);
+                    cube([4,2,8]);
+                translate([13,35,0])
+                rotate([0,0,-45])
+                difference() {
+                    rotate([0,0,45])
+                        cube([5,5,8]);
+                    translate([-0.01, -0.01, -0.01])
+                    cube([10,10,10]);
+                }
             }
         }
         module _xb_fh_mount() {
-            translate([-d_max_w/2,0,d_cr_fh_h-5])
+            translate([-d_max_w/2,0,d_m_fh_h-5])
             translate([14,40,0])
             rotate([90,90,0])
             translate([-5.5,2,0]) {
                 bolt(d=3);
-                translate([0,0,25+0.001])
+                translate([0,0,28+0.001])
                 bolt(d=5.5, h=50);
             }
         }

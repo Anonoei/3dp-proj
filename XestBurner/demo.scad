@@ -1,9 +1,11 @@
 include <src/main.scad>
 
 module xb() {
-    color(c_fh) xb_fh();
     color(c_he) xb_he_chube();
+    xb_he_bolts();
+    color(c_fh) xb_fh();
     color(c_em) xb_em_sherpa_mini();
+
 
     // color(c_pr) xb_pr_beacon();
 
@@ -16,15 +18,15 @@ module xb() {
     color(c_cr) xb_cr_mgn12h();
 
     // color(c_cr) xb_cr();
-    // xb_cr_belt_pin();
+    xb_cr_belt_pin();
 }
 
-translate([0,0,25])
-difference() {
+// translate([0,0,25])
+// difference() {
     xb();
-    translate([0,-100,-100])
-        color([1,0,1]) cube([200,200,200]);
-}
+//     translate([0,-100,-100])
+//         color([1,0,1]) cube([200,200,200]);
+// }
 
 // translate([-25.6,-15.3,18])
 // rotate([90,0,0]) {

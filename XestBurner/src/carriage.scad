@@ -1,22 +1,33 @@
+// module xb_cr_hs_em() { // Extruder mounting holes
+//     module _xb_cr_em() {
+//         rotate([90,0,0])
+//             translate([d_m_em_w/2,d_m_em_h,-d_cr_em_o])
+//                 heatset_m3x4(H=20);
+//     }
+//     _xb_cr_em();
+//     mirror([d_m_em_w/2,0,0])
+//         _xb_cr_em();
+// }
+
 module xb_cr_hs_he() { // Hotend/Extruder holes
     module _xb_cr_he() {
         rotate([90,0,0])
-            translate([d_cr_he_w/2,d_cr_he_h,0])
+            translate([d_m_he_w/2,d_m_he_h,0])
                 heatset_m3x4(H=20);
     }
     _xb_cr_he();
-    mirror([d_cr_he_w/2,0,0])
+    mirror([d_m_he_w/2,0,0])
         _xb_cr_he();
 }
 
 module xb_cr_hs_fh() { // Fan housing holes
     module _xb_cr_fh() {
         rotate([90,0,0])
-            translate([d_cr_fh_w/2, d_cr_fh_h,0])
+            translate([d_m_fh_w/2, d_m_fh_h,0])
                 heatset_m3x4(H=20);
     }
     _xb_cr_fh();
-    mirror([d_cr_he_w/2,0,0])
+    mirror([d_m_he_w/2,0,0])
         _xb_cr_fh();
 }
 
@@ -45,19 +56,29 @@ module xb_cr_pr() { // Probe mount
     }
 }
 
+module xb_cr_em() { // Extruder mount
+    module _xb_cr_em() {
+        translate([0,-d_cr_d+d_cr_em_o,d_cr_ht])
+            cube([d_cr_em_w/2,d_cr_em_d,d_cr_em_h]);
+    }
+    _xb_cr_em();
+    mirror([d_cr_em_w,0,0])
+        _xb_cr_em();
+}
+
 module xb_cr_probe_cut() {
     union() {
         translate([0,d_cr_pr_wire/2+0.01,0])
         rotate([90,90,0]) {
-            translate([-d_cr_fh_h-5,d_cr_fh_w/2-5,0])
+            translate([-d_m_fh_h-5,d_m_fh_w/2-5,0])
                 cylinder(h=d_cr_d*2, r=2); // bottom right fillet
-            translate([-d_cr_fh_h-5,-d_cr_fh_w/2+5,0])
+            translate([-d_m_fh_h-5,-d_m_fh_w/2+5,0])
                 cylinder(h=d_cr_d*2, r=2); // bottom left fillet
-            translate([-d_cr_fh_h-7,0,d_cr_d])
+            translate([-d_m_fh_h-7,0,d_cr_d])
                 cube([8,15,d_cr_d*2], center=true);
-            translate([-d_cr_fh_h-9,0,d_cr_d])
+            translate([-d_m_fh_h-9,0,d_cr_d])
                 cube([8,18.5,d_cr_d*2], center=true);
-            translate([-d_cr_fh_h-12.5,0,0])
+            translate([-d_m_fh_h-12.5,0,0])
                 cylinder(h=d_cr_d*2, r=9.25); // top fillet
             translate([0,0,d_cr_pr_wire]) // wire passthrough
                 cube([35,d_cr_pr_wire,d_cr_pr_wire], center=true);
@@ -129,11 +150,7 @@ module xb_cr() {
                 cube([2,d_cr_d,20+4], center=true);
         }
     }
-    module xb_cr_extruder_mount() {
-        translate([0,-2,0])
-        translate([0,d_cr_em_d/2,d_cr_ht + d_cr_em_h/2])
-            cube([d_cr_em_w,d_cr_em_d,d_cr_em_h], center=true);
-    }
+
 
     union() {
         difference() {
@@ -144,7 +161,8 @@ module xb_cr() {
         }
         xb_cr_pr();
         difference() {
-            xb_cr_extruder_mount();
+            xb_cr_em();
+            // xb_cr_hs_em();
             xb_cr_probe_cut();
             xb_cr_belt_cut();
         }

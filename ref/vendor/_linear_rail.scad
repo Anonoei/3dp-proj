@@ -29,11 +29,11 @@ module ref_linear_rail(l,h,w,E,P) {
     }
 
     tot_length = (l - (E*2));
-    echo(tot_length);
+    // echo(tot_length);
     sect_length = tot_length - (tot_length % P);
-    echo(sect_length);
+    // echo(sect_length);
     sect_count = sect_length/P;
-    echo(sect_count);
+    // echo(sect_count);
 
     translate([(sect_length/2 + E*2-2.5),0,0])
         rotate([0,180,0])
