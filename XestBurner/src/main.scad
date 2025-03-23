@@ -30,6 +30,7 @@ include <./carriages/mgn9h.scad>
 
 // ----- Probes ----- //
 include <./probes/beacon.scad>
+include <./probes/klicky_pcb.scad>
 
 // ----- Extruders ----- //
 include <./extruders/sherpa_mini.scad>

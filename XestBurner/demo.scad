@@ -7,17 +7,17 @@ module xb() {
     color(c_em) xb_em_sherpa_mini();
 
 
-    color(c_pr) xb_pr();
+    color(c_pr) xb_pr_klicky_pcb();
 
     // translate([0,8,0])
     //     ven_mgn9h();
     // xb_cr_mgn9h();
 
-    // translate([0,8.5,0])
-    //     ven_mgn12h(100);
-    // color(c_cr) xb_cr_mgn12h();
+    translate([0,8.5,0])
+        ven_mgn12h(100);
+    color(c_cr) xb_cr_mgn12h();
 
-    color(c_cr) xb_cr();
+    // color(c_cr) xb_cr();
     xb_cr_belt_pin();
 }
 
