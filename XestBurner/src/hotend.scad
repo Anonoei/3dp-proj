@@ -28,9 +28,9 @@ module xb_he_mount() {
 module xb_he() {
     module _xb_he_base() {
         translate([0,-30-d_cr_d,d_cr_ht-5])
-            cube([d_cr_wt/2,28,5]);
+            cube([d_cr_wt/2+2,28,5]);
         translate([d_cr_wt/2-10,-30-d_cr_d,d_cr_ht-5-4.5])
-            cube([10,28,4.5]);
+            cube([10+2,28,4.5]);
         translate([0,-36,d_cr_ht-5-8])
             cube([14,2,8]);
         translate([0,-48,d_cr_ht-9.5])

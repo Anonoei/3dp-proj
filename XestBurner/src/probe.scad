@@ -1,9 +1,9 @@
 module xb_pr() {
     module _xb_pr_bolt() {
-        translate([(d_cr_pr_o-d_cr_pr_w)/2, d_cr_d/2+2,(-d_cr_hb + d_cr_pr_h)]) {
-            translate([0,0,5])
+        translate([(d_cr_pr_o-d_cr_pr_w)/2, d_cr_d/2+d_cr_pr_d-d_m_pr_o,(-d_cr_hb + d_cr_pr_h)]) {
+            translate([0,-3,5])
                 bolt(d=3,h=20);
-            translate([0,0,-8])
+            translate([0,-3,-8])
                 bolt(d=6,h=20);
         }
     }

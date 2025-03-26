@@ -7,7 +7,7 @@ module xb_em() {
     module _em_mount() {
         module _em_base() {
             translate([0,-21,d_cr_ht]) {
-                cube([d_cr_wt/2,18,5]);
+                cube([d_cr_wt/2+2,18,5]);
                 translate([0,13,-10])
                     cube([d_cr_wt/2, 2, 10]);
                 translate([0,-0.5,0])

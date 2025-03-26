@@ -15,6 +15,8 @@ d_m_he_h = 13;
 // Fan Housing mount holes
 d_m_fh_w = 24.6;
 d_m_fh_h = -32.5;
+// Probe mount holes
+d_m_pr_o = 4;
 // Probe
 d_cr_pr_o = 49;
 d_cr_pr_w = 9;

@@ -21,6 +21,8 @@ module xb() {
     xb_cr_belt_pin();
 }
 
+// xb_fh_2510_cut();
+
 // translate([0,0,25])
 // difference() {
     xb();

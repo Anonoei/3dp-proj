@@ -32,7 +32,7 @@ module xb_cr_hs_fh() { // Fan housing holes
 }
 
 module xb_cr_hs_pr() { // Probe mounting holes
-    translate([(d_cr_pr_o-d_cr_pr_w)/2, d_cr_d/2+d_cr_pr_d-3,(-d_cr_hb + d_cr_pr_h)+4])
+    translate([(d_cr_pr_o-d_cr_pr_w)/2, d_cr_d/2+d_cr_pr_d-d_m_pr_o,(-d_cr_hb + d_cr_pr_h)+4])
         heatset_m3x4(H=1);
 }
 

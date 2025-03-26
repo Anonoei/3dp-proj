@@ -4,7 +4,7 @@ module xb_em_sherpa_mini() {
     module _em_mount() {
         translate([0,-m_o,d_cr_ht+5]) {
             translate([m_o-2.75,-3,-5])
-                cube([5,4,5]);
+                cube([5+2,4,5]);
         }
     }
 
