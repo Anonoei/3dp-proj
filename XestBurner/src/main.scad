@@ -14,6 +14,7 @@ c_em = [0.2,0.8,0.2];
 c_he = [0.8,0.2,0.2];
 c_fh = [0.2,0.8,0.8];
 c_pr = [0.6,0.6,0.4];
+c_du = [0.8,0.5,0.2];
 
 c_ve = [0.8,0.8,0.0,0.6];
 
@@ -22,6 +23,7 @@ include <./extruder.scad>
 include <./fan_housing.scad>
 include <./hotend.scad>
 include <./probe.scad>
+include <./ducts.scad>
 
 
 // ----- Carriages ----- //

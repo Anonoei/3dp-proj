@@ -73,7 +73,7 @@ module xb_cr_pr_cut() {
     l2 = d_cr_pr_o - d_cr_w;
     module _xb_pr_cut() {
         translate([0,0,-d_cr_hb-0.01])
-        linear_extrude(5+0.02) polygon(
+        linear_extrude(5+0.02, convexity=2) polygon(
             points=[
                 [-0.01,b], [l1,b], [l2,0.01],
                 [l2,f], [-0.01,f]

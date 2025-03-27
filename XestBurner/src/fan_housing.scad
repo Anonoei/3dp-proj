@@ -14,6 +14,20 @@ module xb_fh_bolts() {
         _xb_fh_bolt();
 }
 
+module xb_du_bolts() {
+    module _4010_holes() {
+        translate([d_max_w/2+10,3,-34])
+        rotate([0,-90,0]) {
+            bolt_shcs_m3(30);
+            // translate([0,32,0])
+            //     bolt_shcs_m3(20);
+        }
+    }
+    translate([0,-42.01 - d_cr_d,0]) {
+        _4010_holes();
+    }
+}
+
 module xb_fh_2510_cut() {
     rotate([90,90,0]) {
         for (i=[10,-10]) {
@@ -98,13 +112,15 @@ module xb_fh() {
         }
     }
 
-    translate([0,-42.01 - d_cr_d,-.5])
-    union() {
-        _xb_fh_4010();
-        // _xb_fh_4010();
-        // mirror([d_max_w,0,0])
-        //     _xb_fh_4010();
-        translate([0,6.1,-7.75])
-            _xb_fh_2510();
+    difference() {
+        translate([0,-42.01 - d_cr_d,-.5])
+        union() {
+            _xb_fh_4010();
+            translate([0,6.1,-7.75])
+                _xb_fh_2510();
+        }
+        xb_du_bolts();
+        mirror([1,0,0])
+            xb_du_bolts();
     }
 }

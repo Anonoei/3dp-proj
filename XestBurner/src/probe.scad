@@ -14,7 +14,7 @@ module xb_pr() {
         l = d_cr_pr_o/2;
         translate([0,d_cr_pr_d,0])
         rotate([90,0,0])
-        linear_extrude(d_cr_pr_d) polygon(
+        linear_extrude(d_cr_pr_d, convexity=2) polygon(
             points=[
                 [r-5,-d_cr_hb+7],
                 [0,-d_cr_hb+7], [0,-d_cr_hb],

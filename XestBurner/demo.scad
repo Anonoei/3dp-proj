@@ -3,10 +3,9 @@ include <src/main.scad>
 module xb() {
     color(c_he) xb_he_chube();
     xb_he_bolts();
+    color(c_du) xb_du();
     color(c_fh) xb_fh();
     color(c_em) xb_em_sherpa_mini();
-
-
     color(c_pr) xb_pr_klicky_pcb();
 
     // translate([0,8,0])
@@ -20,8 +19,6 @@ module xb() {
     // color(c_cr) xb_cr();
     xb_cr_belt_pin();
 }
-
-// xb_fh_2510_cut();
 
 // translate([0,0,25])
 // difference() {
