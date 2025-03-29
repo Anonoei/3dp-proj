@@ -1,4 +1,4 @@
-# XestBurner
+# CFKlicky
  Chaotic Lab CF tube Klicky mount
 
 ![image](demo.png)
