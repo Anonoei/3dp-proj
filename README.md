@@ -1,17 +1,22 @@
 # 3DP Projects
  Various 3D printing designs
 
-### [SH01](https://github.com/Anonoei/3dp-proj/tree/main/SH01)
+### [SH01](SH01)
  Bowden retainers for Sovol SH01 filament dryer
 
 ![image](SH01/demo.png)
 
-### [TopBowden](https://github.com/Anonoei/3dp-proj/tree/main/TopBowden)
+### [TopBowden](TopBowden)
  Top bowden guide for v2.4
 
 ![image](TopBowden/demo.png)
 
-### [XestBurner](https://github.com/Anonoei/3dp-proj/tree/main/XestBurner)
+### [CFKlicky](CFKlicky)
+ Chaotic Lab CF tube Klicky mount
+
+![image](CFKlicky/demo.png)
+
+### [XestBurner](XestBurner)
  Modular toolhead
 
 ![image](XestBurner/demo.png)
