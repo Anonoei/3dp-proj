@@ -27,6 +27,7 @@ include <./fan_housing.scad>
 include <./hotend.scad>
 include <./probe.scad>
 include <./ducts.scad>
+include <./faceplate.scad>
 
 
 // ----- Carriages ----- //

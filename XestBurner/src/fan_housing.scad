@@ -1,12 +1,9 @@
 module xb_fh_bolts() {
     module _xb_fh_bolt() {
-        translate([-d_max_w/2,0,d_m_fh_h-5])
-        translate([14,40,0])
-        rotate([90,90,0])
+        translate([-d_m_fh_w/2+2,-14,d_m_fh_h-5.5])
+        rotate([-90,90,0])
         translate([-5.5,2,0]) {
-            bolt(d=3);
-            translate([0,0,28+0.001])
-            bolt(d=5.5, h=50);
+            bolt_shcs_m3(10);
         }
     }
     _xb_fh_bolt();
@@ -15,17 +12,35 @@ module xb_fh_bolts() {
 }
 
 module xb_du_bolts() {
-    module _4010_holes() {
-        translate([d_max_w/2+10,3,-34])
+    module _du_bolt() {
+        translate([d_max_w/2+1,3,-34.5])
         rotate([0,-90,0]) {
-            bolt_shcs_m3(30);
+            bolt_shcs_m3(16);
             // translate([0,32,0])
             //     bolt_shcs_m3(20);
         }
     }
     translate([0,-42.01 - d_cr_d,0]) {
-        _4010_holes();
+        _du_bolt();
+        mirror([1,0,0])
+            _du_bolt();
     }
+}
+
+module xb_fh_bolt_cut() {
+    module _xb_fh_bolt() {
+        translate([-d_max_w/2,0,d_m_fh_h-5])
+        translate([14,40,0])
+        rotate([90,90,0])
+        translate([-5.5,2,0]) {
+            bolt(d=3);
+            translate([0,0,28+0.001])
+            bolt(d=6, h=50);
+        }
+    }
+    _xb_fh_bolt();
+    mirror([-d_max_w/2,0,0])
+        _xb_fh_bolt();
 }
 
 module xb_fh_2510_cut() {
@@ -95,7 +110,7 @@ module xb_fh() {
                     _xb_4010_base();
             }
             xb_fh_4010_cut();
-            xb_fh_bolts();
+            xb_fh_bolt_cut();
         }
     }
     module _xb_fh_2510() {
@@ -120,7 +135,5 @@ module xb_fh() {
                 _xb_fh_2510();
         }
         xb_du_bolts();
-        mirror([1,0,0])
-            xb_du_bolts();
     }
 }

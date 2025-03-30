@@ -1,14 +1,3 @@
-// module xb_cr_hs_em() { // Extruder mounting holes
-//     module _xb_cr_em() {
-//         rotate([90,0,0])
-//             translate([d_m_em_w/2,d_m_em_h,-d_cr_em_o])
-//                 heatset_m3x4(H=20);
-//     }
-//     _xb_cr_em();
-//     mirror([d_m_em_w/2,0,0])
-//         _xb_cr_em();
-// }
-
 module xb_cr_hs_he() { // Hotend/Extruder holes
     module _xb_cr_he() {
         rotate([90,0,0])

@@ -11,6 +11,22 @@ module xb_he_bolts() {
     }
 }
 
+module xb_fp_hs() {
+    module _xb_fp_hs() {
+        translate([d_m_fp_w,-48,d_m_fp_h])
+        rotate([-90,0,0])
+            heatset_m3x4(H=4);
+    }
+    _xb_fp_hs();
+    mirror([1,0,0])
+        _xb_fp_hs();
+}
+
+module xb_he_led() {
+    translate([-10/2,-50,d_m_he_h-7])
+    cube([10,10,8]);
+}
+
 module xb_he_mount() {
     module _xb_he_mount() {
         translate([d_m_he_w/2-5,-54,d_m_he_h+5])
@@ -51,6 +67,7 @@ module xb_he() {
             cylinder(d=30.5,h=10);
         xb_cr_hs_he();
         xb_he_mount();
+        xb_fp_hs();
+        xb_he_led();
     }
-    // xb_he_mount();
 }
