@@ -1,12 +1,12 @@
 include <src/main.scad>
 
 module xb() {
-    color(c_he) xb_he_chube();
+    color(c_rl) xb_he_chube();
     xb_he_bolts();
-    color(c_du) xb_du();
-    color(c_fh) xb_fh();
-    color(c_em) xb_em_sherpa_mini();
-    color(c_pr) xb_pr_klicky_pcb();
+    color(c_ol) xb_du();
+    color(c_cl) xb_fh();
+    color(c_gl) xb_em_sherpa_mini();
+    color(c_ll) xb_pr_klicky_pcb();
 
     // translate([0,8,0])
     //     ven_mgn9h();
@@ -14,10 +14,10 @@ module xb() {
 
     translate([0,8.5,0])
         ven_mgn12h(100);
-    color(c_cr) xb_cr_mgn12h();
+    color(c_pl) xb_cr_mgn12h();
 
     // color(c_cr) xb_cr();
-    xb_cr_belt_pin();
+    color(c_yl) xb_cr_belt_pin();
 }
 
 // translate([0,0,25])
