@@ -22,7 +22,7 @@ def action_export(args):
     r_path = (ROOT / args.project / "export")
     w_path = (ROOT / args.project / "STLs")
     for file in r_path.iterdir():
-        cmd = f"openscad -o {str(w_path / file.stem) + '.stl'} --export-format asciistl {r_path / file.name}"
+        cmd = f"openscad -o {str(w_path / file.stem) + '.stl'} --export-format binstl {r_path / file.name}"
         print(f"Running '{cmd}'")
         os.system(cmd)
 
