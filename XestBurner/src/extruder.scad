@@ -8,8 +8,10 @@ module xb_em() {
         module _em_base() {
             translate([0,-21,d_cr_ht]) {
                 cube([d_cr_wt/2+2,18,5]);
-                translate([0,13,-10])
-                    cube([d_cr_wt/2, 2, 10]);
+                translate([4,13,-10])
+                    cube([d_cr_wt/2-4, 2, 10]);
+                translate([0,13,-5])
+                    cube([4, 2, 5]);
                 translate([0,-0.5,0])
                     cylinder(h=5,d=10);
                 // translate([0,14,5])
