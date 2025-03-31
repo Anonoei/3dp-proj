@@ -22,12 +22,6 @@ module xb_du_duct() {
         // translate([8,-50,-49.1])
         //     cube([6,10,10]);
     }
-    module _duct_top() {
-        translate([24,-50,-40])
-            cube([2,44,8]);
-        translate([17.25,-12,-38])
-            cube([8,6,1.5]);
-    }
     module _duct_path() {
         od = 12;
         id = od-6;
@@ -51,7 +45,6 @@ module xb_du_duct() {
         union() {
             _duct_cyd();
             _duct_ext();
-            _duct_top();
         }
         _duct_path();
         translate([0.2,0,0])
@@ -60,6 +53,13 @@ module xb_du_duct() {
     // translate([0,-27.5,-55])
     // cylinder(d=24, h=5);
 
+}
+
+module xb_du_top() {
+    translate([24,-50,-40])
+        cube([2,44,8]);
+    translate([17.25,-12,-38])
+        cube([8,6,1.5]);
 }
 
 module xb_du_mount() {
@@ -83,6 +83,7 @@ module xb_du_mount() {
         }
     }
     _du_mount();
+    xb_du_top();
 }
 
 module xb_du_hf() {
