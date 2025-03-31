@@ -16,20 +16,20 @@ module xb() {
     color(c_sl) xb_fp();
 
     // color(c_pl) xb_cr();
-    // xb_cr_mgn9h();
+    // color(c_pl) xb_cr_mgn9h();
     color(c_pl) xb_cr_mgn12h();
 
     xb_hardware();
 
     translate([0,-21.5,-56])
-    color([0.8,0.1,0.1,0.5])ven_hotend_chube();
+    color([0.8,0.1,0.1,0.5]) ven_hotend_chube();
 }
 
 translate([0,8.5,0])
     ven_mgn12h(100);
 
 // translate([0,8,0])
-//     ven_mgn9h();
+//     ven_mgn9h(100);
 
 
 difference() {

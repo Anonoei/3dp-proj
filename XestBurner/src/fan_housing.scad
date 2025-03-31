@@ -66,11 +66,11 @@ module xb_fh_4010_cut() {
         rotate([90,90,0]) {
             difference() {
                 translate([0,0,-4])
-                    cube([40.5,10.5,44.5]);
+                    cube([40.5,10.5,44.5]); // Main body
                 translate([-0.01,5,40-5])
-                    cube([4,10,10]);
+                    cube([4,10,10]); // Corner
                 translate([36.5+0.01,5,40-5])
-                    cube([4,10,10]);
+                    cube([4,10,10]); // Corner
             }
             translate([2.5,10,0])
                 cube([36,10,38]);
@@ -123,7 +123,7 @@ module xb_fh() {
         difference() {
             _xb_2510_base();
             translate([0,1,1.5+0.01])
-            xb_fh_2510_cut();
+                xb_fh_2510_cut();
         }
     }
 

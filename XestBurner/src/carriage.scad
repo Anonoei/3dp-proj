@@ -89,7 +89,7 @@ module xb_cr_pr_wire_cut() {
             translate([-d_m_fh_h-12.5,0,0])
                 cylinder(h=d_cr_d*2, r=9.25); // top fillet
             translate([0,0,d_cr_pr_wire]) // wire passthrough
-                cube([35,d_cr_pr_wire,d_cr_pr_wire], center=true);
+                cube([50,d_cr_pr_wire,d_cr_pr_wire], center=true);
             translate([-d_cr_ht-1,0,-0.01]) // wire passthrough
                 cube([d_cr_pr_wire,d_cr_pr_wire,12], center=true);
         }
