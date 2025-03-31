@@ -2,7 +2,7 @@ module xb_fp() {
     t = d_m_he_h+2;
     l = d_cr_wt/2-8;
     r = -l;
-    b = d_m_fh_h-5;
+    b = d_m_fh_h-12;
     module _fp() {
         translate([0,-48,0])
         rotate([90,0,0])
