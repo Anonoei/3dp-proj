@@ -78,20 +78,18 @@ module xb_cr_pr_wire_cut() {
     union() {
         translate([0,d_cr_pr_wire/2+0.01,0])
         rotate([90,90,0]) {
-            translate([-d_m_fh_h-5,d_m_fh_w/2-5,0])
+            hull() {
+            translate([d_cr_hb-10,d_m_fh_w/2-5,0])
                 cylinder(h=d_cr_d*2, r=2); // bottom right fillet
-            translate([-d_m_fh_h-5,-d_m_fh_w/2+5,0])
+            translate([d_cr_hb-10,-d_m_fh_w/2+5,0])
                 cylinder(h=d_cr_d*2, r=2); // bottom left fillet
-            translate([-d_m_fh_h-7,0,d_cr_d])
-                cube([8,15,d_cr_d*2], center=true);
-            translate([-d_m_fh_h-9,0,d_cr_d])
-                cube([8,18.5,d_cr_d*2], center=true);
-            translate([-d_m_fh_h-12.5,0,0])
-                cylinder(h=d_cr_d*2, r=9.25); // top fillet
+                translate([d_cr_hb-18,0,0])
+                    cylinder(h=d_cr_d*2, r=9.25); // top fillet
+            }
             translate([0,0,d_cr_pr_wire]) // wire passthrough
                 cube([50,d_cr_pr_wire,d_cr_pr_wire], center=true);
-            translate([-d_cr_ht-1,0,-0.01]) // wire passthrough
-                cube([d_cr_pr_wire,d_cr_pr_wire,12], center=true);
+            translate([-d_cr_ht-d_cr_em_h+-2.5,0,-4.01]) // wire passthrough
+                cube([d_cr_pr_wire,d_cr_pr_wire,16], center=true);
         }
     }
 }

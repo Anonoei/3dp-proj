@@ -33,6 +33,8 @@ translate([0,8.5,0])
 
 // xb_fh_4010_cut();
 
+// xb_cr_pr_wire_cut();
+
 difference() {
     xb();
     // translate([-10,-100,-80])
