@@ -152,8 +152,12 @@ module xb_cr() {
                 cube([d_cr_wb, d_cr_d, d_cr_hb], center=true);
         }
         translate([d_cr_w/2,-d_cr_d,0]) { // Belt retainer
-            translate([0,d_cr_d/2,0])
-                cube([2,d_cr_d,20+4], center=true);
+            translate([0,d_cr_d/2,-10])
+                cube([2,d_cr_d,20], center=true);
+        }
+        translate([-d_cr_w/2,-d_cr_d,0]) { // Belt retainer
+            translate([0,d_cr_d/2,-10])
+                cube([2,d_cr_d,20], center=true);
         }
     }
 
@@ -169,7 +173,6 @@ module xb_cr() {
         xb_cr_pr();
         difference() {
             xb_cr_em();
-            // xb_cr_hs_em();
             xb_cr_pr_wire_cut();
             xb_cr_belt_cut();
         }
