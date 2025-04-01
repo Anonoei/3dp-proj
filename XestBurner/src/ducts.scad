@@ -114,7 +114,7 @@ module xb_du_uhf() {
         translate([12,-50,-46])
             cube([2,10,10]);
         difference() {
-            translate([12,-28,-45])
+            translate([12,-28,-46])
                 cube([2,22,8]);
             translate([11.01,-33,-50])
                 rotate([45,0,0])
