@@ -46,13 +46,8 @@ module xb_du_duct() {
             _duct_cyd();
             _duct_ext();
         }
-        // _duct_path();
+        _duct_path();
     }
-    // translate([0,1,5.75])
-    //
-    // translate([0,-27.5,-55])
-    // cylinder(d=24, h=5);
-
 }
 
 module xb_du_top() {
@@ -119,11 +114,11 @@ module xb_du_uhf() {
         translate([12,-50,-46])
             cube([2,10,10]);
         difference() {
-            translate([12,-24,-45])
-                cube([2,18,8]);
-            translate([11.01,-30,-50])
+            translate([12,-28,-45])
+                cube([2,22,8]);
+            translate([11.01,-33,-50])
                 rotate([45,0,0])
-                    cube([3,30,8]);
+                    cube([4,30,20]);
         }
         difference() {
             translate([14,-50,-44])
@@ -131,6 +126,8 @@ module xb_du_uhf() {
             translate([17.5,-42.5,-44.1])
                 cube([7,30,8]);
         }
+        translate([26,-50,-44])
+            cube([2,44,4]);
     }
 
     union() {

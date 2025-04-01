@@ -15,9 +15,9 @@ module xb_du_bolts() {
     module _du_bolt() {
         translate([d_max_w/2+2.5,4,-36.5+4])
         rotate([0,-90,0]) {
-            bolt_shcs_m3(14);
+            bolt_shcs_m3(16);
             translate([0,32,-0])
-                bolt_shcs_m3(14);
+                bolt_shcs_m3(16);
         }
     }
     translate([0,-42.01 - d_cr_d,0]) {
