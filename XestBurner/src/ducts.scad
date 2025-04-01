@@ -1,6 +1,6 @@
 module xb_du_duct() {
     module _duct_cyd() {
-        translate([d_max_w/2-2-10,-d_cr_d,-38])
+        translate([d_max_w/2-10,-d_cr_d,-38])
         rotate([90,0,0])
         difference() {
             translate([-1,-1,0])
@@ -15,10 +15,10 @@ module xb_du_duct() {
         }
     }
     module _duct_ext() {
-        translate([12,-44-6,-40])
+        translate([14,-44-6,-40])
             cube([4,44,2]);
-        translate([15.5,-28,-44-0.1])
-            cube([8,44,10], center=true);
+        translate([16.75,-28,-44-0.1])
+            cube([9.5,44,10], center=true);
         // translate([8,-50,-49.1])
         //     cube([6,10,10]);
     }
@@ -46,7 +46,7 @@ module xb_du_duct() {
             _duct_cyd();
             _duct_ext();
         }
-        _duct_path();
+        // _duct_path();
     }
     // translate([0,1,5.75])
     //
@@ -56,11 +56,22 @@ module xb_du_duct() {
 }
 
 module xb_du_top() {
-    union() {
-        translate([24,-50,-40])
-            cube([2,44,8]);
-        translate([17.25,-12,-38])
-            cube([8,6,1.5]);
+    difference() {
+        union() {
+            translate([26,-50,-40])
+                cube([2,44,12]);
+            translate([17.25,-12,-38])
+                cube([10,6,1.5]);
+        }
+        translate([25,-37,-32]) {
+            hull() {
+                rotate([60,0,0])
+                    cube([10,10,10]);
+                translate([0,18,0])
+                rotate([30,0,0])
+                    cube([10,10,10]);
+            }
+        }
     }
 }
 
@@ -68,20 +79,20 @@ module xb_du_mount() {
     module _du_mount() {
         difference() {
             translate([12,-50,-39.1])
-                cube([2,10,8]);
-            translate([8,-44,-34.5])
+                cube([2,10,10]);
+            translate([8,-44,-32.5])
             rotate([0,90,0])
                 bolt(d=2.5,h=20);
         }
         difference() {
-            translate([12,-20,-39.1])
-                cube([2,14,8]);
-            translate([8,-12,-34.5])
+            translate([12,-22,-39.1])
+                cube([2,16,10]);
+            translate([8,-12,-32.5])
             rotate([0,90,0])
                 bolt(d=2.5,h=20);
-            translate([11.01,-20,-40])
+            translate([11.01,-22,-39])
             rotate([45,0,0])
-                cube([3,14,8]);
+                cube([4,14,12]);
         }
     }
     _du_mount();

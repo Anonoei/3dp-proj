@@ -13,10 +13,10 @@ module xb_fh_bolts() {
 
 module xb_du_bolts() {
     module _du_bolt() {
-        translate([d_max_w/2+1,4,-34.5])
+        translate([d_max_w/2+2.5,4,-36.5+4])
         rotate([0,-90,0]) {
             bolt_shcs_m3(14);
-            translate([0,32,0])
+            translate([0,32,-0])
                 bolt_shcs_m3(14);
         }
     }
@@ -67,10 +67,24 @@ module xb_fh_4010_cut() {
             difference() {
                 translate([0,0,-4])
                     cube([40.5,10.5,44.5]); // Main body
-                translate([-0.01,5,40.5-5 + 0.01])
-                    cube([5,10,5]); // Top Corner
-                translate([35.5+0.01,5,40.5-5 + 0.01])
-                    cube([5,10,5]); // Bottom Corner
+                translate([-0.01,4,40.5-5 + 0.01]) { // Top corner
+                    translate([2.5,0,2.5])
+                    rotate([-90,0,0])
+                        cylinder(d=5,h=8);
+                    translate([-.5,0,0])
+                        cube([3,10,5]);
+                    translate([0,0,2.5])
+                        cube([5,10,3]);
+                }
+                translate([35.5+0.01,5,40.5-5 + 0.01]) {
+                    translate([2.5,0,2.5])
+                    rotate([-90,0,0])
+                        cylinder(d=5,h=8);
+                    translate([2.5,0,0])
+                        cube([5,10,3]);
+                    translate([0,0,2.5])
+                        cube([5,10,3]);
+                }
             }
             translate([2.5,10,0])
                 cube([40-4,10,40-4]); // Fan blades
@@ -98,7 +112,11 @@ module xb_fh() {
         module _xb_4010_base() {
             translate([d_max_w/2-14,42+0.01,6.5])
             rotate([90,90,0]) {
-                cube([44,10,42]);
+                difference() {
+                    cube([44,2+10,42]);
+                    translate([40.01,3,-0.01])
+                        cube([20,12,42-5]);
+                }
             }
             _xb_4010_mount();
         }
