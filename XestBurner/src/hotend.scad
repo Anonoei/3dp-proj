@@ -23,7 +23,7 @@ module xb_fp_hs() {
 }
 
 module xb_he_led() {
-    translate([-10/2,-50,d_m_he_h-7])
+    translate([-10/2,-50,d_m_he_h-7-0.01])
     cube([10,10,8]);
 }
 
@@ -56,6 +56,10 @@ module xb_he() {
         translate([14,-42,d_cr_ht-9.5])
             cylinder(h=9.5,d=12);
     }
+    translate([d_cr_wt/2,-30,d_cr_ht-11.5])
+        cube([2,22,2]);
+    translate([-d_cr_wt/2-2,-30,d_cr_ht-11.5])
+        cube([2,22,2]);
     difference() {
         union() {
             _xb_he_base();

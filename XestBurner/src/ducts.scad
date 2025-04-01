@@ -47,19 +47,21 @@ module xb_du_duct() {
             _duct_ext();
         }
         _duct_path();
-        translate([0.2,0,0])
-        xb_du_bolts();
     }
+    // translate([0,1,5.75])
+    //
     // translate([0,-27.5,-55])
     // cylinder(d=24, h=5);
 
 }
 
 module xb_du_top() {
-    translate([24,-50,-40])
-        cube([2,44,8]);
-    translate([17.25,-12,-38])
-        cube([8,6,1.5]);
+    union() {
+        translate([24,-50,-40])
+            cube([2,44,8]);
+        translate([17.25,-12,-38])
+            cube([8,6,1.5]);
+    }
 }
 
 module xb_du_mount() {
@@ -67,14 +69,14 @@ module xb_du_mount() {
         difference() {
             translate([12,-50,-39.1])
                 cube([2,10,8]);
-            translate([8,-43,-34.5])
+            translate([8,-44,-34.5])
             rotate([0,90,0])
                 bolt(d=2.5,h=20);
         }
         difference() {
             translate([12,-20,-39.1])
                 cube([2,14,8]);
-            translate([8,-11,-34.5])
+            translate([8,-12,-34.5])
             rotate([0,90,0])
                 bolt(d=2.5,h=20);
             translate([11.01,-20,-40])
@@ -83,7 +85,11 @@ module xb_du_mount() {
         }
     }
     _du_mount();
-    xb_du_top();
+    difference() {
+        xb_du_top();
+        translate([1,0,0])
+            xb_du_bolts();
+    }
 }
 
 module xb_du_hf() {

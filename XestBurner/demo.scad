@@ -22,7 +22,7 @@ module xb() {
     xb_hardware();
 
     translate([0,-21.5,-56])
-    color([0.8,0.1,0.1,0.5]) ven_hotend_chube();
+        color([0.8,0.1,0.1,0.5]) ven_hotend_chube();
 }
 
 translate([0,8.5,0])
@@ -30,10 +30,6 @@ translate([0,8.5,0])
 
 // translate([0,8,0])
 //     ven_mgn9h(100);
-
-// xb_fh_4010_cut();
-
-// xb_cr_pr_wire_cut();
 
 difference() {
     xb();
