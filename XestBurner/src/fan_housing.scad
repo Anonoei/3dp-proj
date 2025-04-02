@@ -13,10 +13,10 @@ module xb_fh_bolts() {
 
 module xb_du_bolts() {
     module _du_bolt() {
-        translate([d_max_w/2+2.5,4,-36.5+4])
+        translate([d_max_w/2+2.5,2.5,-36.5+2.5])
         rotate([0,-90,0]) {
             bolt_shcs_m3(16);
-            translate([0,32,-0])
+            translate([0,35,-0])
                 bolt_shcs_m3(16);
         }
     }
@@ -76,7 +76,7 @@ module xb_fh_4010_cut() {
                     translate([0,0,2.5])
                         cube([5,10,3]);
                 }
-                translate([35.5+0.01,5,40.5-5 + 0.01]) {
+                translate([35.5+0.01,4,40.5-5 + 0.01]) { // Bottom corner
                     translate([2.5,0,2.5])
                     rotate([-90,0,0])
                         cylinder(d=5,h=8);
@@ -86,10 +86,10 @@ module xb_fh_4010_cut() {
                         cube([5,10,3]);
                 }
             }
-            translate([2.5,10,0])
+            translate([2.5,10.5-0.01,0])
                 cube([40-4,10,40-4]); // Fan blades
-            translate([40,1.25,10/2-7])
-                cube([10,8,37]);
+            translate([40,1.25,10/2-1])
+                cube([10,8,30]); // Exhaust
         }
     }
     _4010_base();

@@ -45,10 +45,20 @@ module xb_du_path() {
     ];
 
     module _xb_path() {
-        translate([12.5,-12,-35])
-        rotate([90,0,0])
-            linear_extrude(31, convexity=2)
-            polygon(points);
+        difference() {
+            translate([12.5,-12+6,-35])
+            rotate([90,0,0])
+                linear_extrude(36, convexity=2)
+                polygon(points);
+            translate([13,-12,-38])
+                cube([15,6+0.01,24]);
+        translate([2,-1.8,-66])
+        rotate([20,0,0])
+            cube([30,20,30]);
+        translate([2,-52,-70])
+        rotate([20,0,0])
+            cube([30,20,30]);
+        }
     }
     _xb_path();
     mirror([1,0,0])
@@ -80,16 +90,16 @@ module xb_du_mount() {
         difference() {
             translate([12,-50,-39.1])
                 cube([2,10,9]);
-            translate([8,-44,-32.5])
+            translate([8,-45.5,-34])
             rotate([0,90,0])
-                bolt(d=2.8,h=20);
+                bolt(d=2.5,h=20);
         }
         difference() {
             translate([12,-22,-39.1])
                 cube([2,16,9]);
-            translate([8,-12,-32.5])
+            translate([8,-45.5+35,-34])
             rotate([0,90,0])
-                bolt(d=2.8,h=20);
+                bolt(d=2.5,h=20);
             translate([11.01,-22,-39])
             rotate([45,0,0])
                 cube([4,14,12]);

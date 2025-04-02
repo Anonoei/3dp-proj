@@ -45,21 +45,21 @@ module xb_he() {
     module _xb_he_base() {
         translate([0,-30-d_cr_d,d_cr_ht-5])
             cube([d_cr_wt/2+2,28,5]);
-        translate([d_cr_wt/2-10,-30-d_cr_d,d_cr_ht-5-4.5])
-            cube([10+2,28,4.5]);
-        translate([0,-36,d_cr_ht-5-8])
-            cube([14,2,8]);
+        translate([d_cr_wt/2-12,-30-d_cr_d,d_cr_ht-5-4.5])
+            cube([10+4,28,4.5]);
+        difference() {
+            translate([0,-36,d_cr_ht-5-8])
+                cube([14,2,8]);
+            translate([0,-38,d_cr_ht-5-10])
+                cube([8,8,10]);
+        }
         translate([0,-48,d_cr_ht-9.5])
-            cube([14,12,9.5]);
+            cube([14,16,9.5]);
         translate([16.5,-36,d_cr_ht-9.5])
             cylinder(h=9.5,d=15);
         translate([14,-42,d_cr_ht-9.5])
             cylinder(h=9.5,d=12);
     }
-    // translate([d_cr_wt/2+2,-30,d_cr_ht-11.5])
-    //     cube([2,22,2]);
-    // translate([-d_cr_wt/2-4,-30,d_cr_ht-11.5])
-    //     cube([2,22,2]);
     difference() {
         union() {
             _xb_he_base();
@@ -67,8 +67,8 @@ module xb_he() {
                 _xb_he_base();
         }
         xb_em_cut();
-        translate([0,-21.5,0.5])
-            cylinder(d=30.5,h=10);
+        translate([0,-21.5,0.5-0.01])
+            cylinder(d=32,h=10);
         xb_cr_hs_he();
         xb_he_mount();
         xb_fp_hs();
