@@ -22,32 +22,37 @@ module xb_du_duct() {
         // translate([8,-50,-49.1])
         //     cube([6,10,10]);
     }
-    module _duct_path() {
-        od = 12;
-        id = od-6;
-        oa = -70;
-        op = 16;
-        points = [
-            [id,0],
-            for (a = [0:op]) [od*cos(a*(oa/op)), od*sin(a*(oa/op))],
-            [2,-12],
-            [-4,-14],
-            [-4,-6],
-            for (a = [0:op]) [id*cos((op-a)*(oa/op)), id*sin((op-a)*(oa/op))],
-        ];
 
+    union() {
+        _duct_cyd();
+        _duct_ext();
+    }
+}
+
+module xb_du_path() {
+    od = 13;
+    id = od-8.25;
+    oa = -70;
+    op = 16;
+    t = 20;
+    points = [
+        [id,t], [od,t],
+        for (a = [0:op]) [od*cos(a*(oa/op)), od*sin(a*(oa/op))],
+        [2,-13],
+        [-4,-14],
+        // [-4,-14],
+        for (a = [0:op]) [id*cos((op-a)*(oa/op)), id*sin((op-a)*(oa/op))-4],
+    ];
+
+    module _xb_path() {
         translate([12.5,-12,-35])
         rotate([90,0,0])
             linear_extrude(31, convexity=2)
             polygon(points);
     }
-    difference() {
-        union() {
-            _duct_cyd();
-            _duct_ext();
-        }
-        _duct_path();
-    }
+    _xb_path();
+    mirror([1,0,0])
+        _xb_path();
 }
 
 module xb_du_top() {
@@ -74,21 +79,23 @@ module xb_du_mount() {
     module _du_mount() {
         difference() {
             translate([12,-50,-39.1])
-                cube([2,10,10]);
+                cube([2,10,9]);
             translate([8,-44,-32.5])
             rotate([0,90,0])
-                bolt(d=2.5,h=20);
+                bolt(d=2.8,h=20);
         }
         difference() {
             translate([12,-22,-39.1])
-                cube([2,16,10]);
+                cube([2,16,9]);
             translate([8,-12,-32.5])
             rotate([0,90,0])
-                bolt(d=2.5,h=20);
+                bolt(d=2.8,h=20);
             translate([11.01,-22,-39])
             rotate([45,0,0])
                 cube([4,14,12]);
         }
+        translate([25,-48+5,-38])
+            cube([1,32,1.5]);
     }
     _du_mount();
     difference() {
@@ -99,13 +106,16 @@ module xb_du_mount() {
 }
 
 module xb_du_hf() {
-    union() {
-        xb_du_duct();
-        xb_du_mount();
-        mirror([1,0,0]) {
+    difference() {
+        union() {
             xb_du_duct();
             xb_du_mount();
+            mirror([1,0,0]) {
+                xb_du_duct();
+                xb_du_mount();
+            }
         }
+        xb_du_path();
     }
 }
 
@@ -120,30 +130,29 @@ module xb_du_uhf() {
                 rotate([45,0,0])
                     cube([4,30,20]);
         }
-        difference() {
-            translate([14,-50,-44])
-                cube([12,44,6]);
-            translate([17.5,-42.5,-44.1])
-                cube([7,30,8]);
-        }
+        translate([14,-50,-44])
+            cube([12,44,6]);
         translate([26,-50,-44])
             cube([2,44,4]);
     }
 
-    union() {
-        _du_ext();
-        xb_du_mount();
-        mirror([1,0,0])  {
+    difference() {
+        union() {
             _du_ext();
             xb_du_mount();
-        }
+            mirror([1,0,0])  {
+                _du_ext();
+                xb_du_mount();
+            }
 
-
-        translate([0,0,-6]) {
-            xb_du_duct();
-            mirror([1,0,0]) {
+            translate([0,0,-6]) {
                 xb_du_duct();
+                mirror([1,0,0]) {
+                    xb_du_duct();
+                }
             }
         }
+        translate([0,0,-6])
+            xb_du_path();
     }
 }
