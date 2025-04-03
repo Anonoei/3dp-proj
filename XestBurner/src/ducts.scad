@@ -92,14 +92,14 @@ module xb_du_mount() {
                 cube([2,10,9]);
             translate([8,-45.5,-34])
             rotate([0,90,0])
-                bolt(d=2.5,h=20);
+                bolt(d=2.8,h=20);
         }
         difference() {
             translate([12,-22,-39.1])
                 cube([2,16,9]);
             translate([8,-45.5+35,-34])
             rotate([0,90,0])
-                bolt(d=2.5,h=20);
+                bolt(d=2.8,h=20);
             translate([11.01,-22,-39])
             rotate([45,0,0])
                 cube([4,14,12]);

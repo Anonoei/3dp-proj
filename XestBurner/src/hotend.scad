@@ -73,5 +73,9 @@ module xb_he() {
         xb_he_mount();
         xb_fp_hs();
         xb_he_led();
+        translate([d_cr_wt/2+0.01,-d_cr_d-2-4+0.01,d_cr_ht-10-0.01])
+            cube([2,4,12]);
+        translate([-d_cr_wt/2-2.01,-d_cr_d-2-4+0.01,d_cr_ht-10-0.01])
+            cube([2,4,12]);
     }
 }
