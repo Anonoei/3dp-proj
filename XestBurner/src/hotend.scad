@@ -77,5 +77,7 @@ module xb_he() {
             cube([2,4,12]);
         translate([-d_cr_wt/2-2.01,-d_cr_d-2-4+0.01,d_cr_ht-10-0.01])
             cube([2,4,12]);
+        translate([-d_cr_wt/2-4,-d_cr_d-20,d_cr_ht-10-0.01])
+            cube([d_cr_wt+8,6,5]);
     }
 }

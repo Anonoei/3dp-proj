@@ -145,6 +145,18 @@ module xb_fh() {
         }
     }
 
+    module _xb_fh_wire() {
+        rotate([0,-90,0])
+        // cube([8,4,12]);
+        linear_extrude(40, convexity=2) polygon(
+                points=[
+                    [10,-20], [10,-10],
+                    [5,0],
+                    [0,-10], [0,-20],
+                ]
+            );
+    }
+
     difference() {
         translate([0,-42.01 - d_cr_d,-.5])
         union() {
@@ -153,5 +165,9 @@ module xb_fh() {
                 _xb_fh_2510();
         }
         xb_du_bolts();
+        translate([20,-12,-28])
+            _xb_fh_wire();
+        translate([-20,-10+0.01,-15])
+        cube([40,4,14]);
     }
 }
