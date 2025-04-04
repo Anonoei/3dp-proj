@@ -33,12 +33,12 @@ module xb_em() {
     }
 
     union() {
-    _em_mount();
-    mirror([d_cr_wt,0,0])
         _em_mount();
-        translate([d_cr_wt/2+0.01,-d_cr_d-2-4,d_cr_ht-9.5])
+        mirror([d_cr_wt,0,0])
+            _em_mount();
+        translate([d_cr_wt/2+0.01,-d_cr_d-2-4,d_cr_ht-9.5+0.01])
             cube([2,4,10]);
-        translate([-d_cr_wt/2-2-0.01,-d_cr_d-2-4,d_cr_ht-9.5])
+        translate([-d_cr_wt/2-2-0.01,-d_cr_d-2-4,d_cr_ht-9.5+0.01])
             cube([2,4,10]);
     }
 }
