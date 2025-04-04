@@ -34,8 +34,8 @@ module xb_fh_bolt_cut() {
         rotate([90,90,0])
         translate([-5.5,2,0]) {
             bolt(d=3);
-            translate([0,0,28+0.001])
-            bolt(d=6, h=50);
+            translate([0,0,3+5])
+                bolt(d=6, h=12);
         }
     }
     _xb_fh_bolt();
