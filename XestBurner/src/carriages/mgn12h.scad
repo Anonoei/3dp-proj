@@ -8,13 +8,13 @@ module xb_cr_mgn12h() {
             translate([0,-d_cr_d,0])
             rotate([270,90,0]) {
                 translate([20/2,20/2,0])
-                    bolt_shcs_m3(h=20);
+                    bolt_shcs_m3(h=20,v=true);
                 translate([-20/2,20/2,0])
-                    bolt_shcs_m3(h=20);
+                    bolt_shcs_m3(h=20,v=true);
                 translate([20/2,-20/2,0])
-                    bolt_shcs_m3(h=20);
+                    bolt_shcs_m3(h=20,v=true);
                 translate([-20/2,-20/2,0])
-                    bolt_shcs_m3(h=20);
+                    bolt_shcs_m3(h=20,v=true);
             }
         }
     }

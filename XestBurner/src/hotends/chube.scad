@@ -8,7 +8,7 @@ module xb_he_chube() {
             phi = i * delta;
             translate([r*cos(phi), r*sin(phi), 15.5])
                 rotate([180,0,0])
-                bolt_shcs_m3();
+                bolt_shcs_m3(v=true);
         }
     }
     difference() {
