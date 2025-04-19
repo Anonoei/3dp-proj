@@ -1,3 +1,25 @@
+module xb_fp_cut() {
+    module _fp_cut() {
+        translate([d_m_fp_w,-50,d_m_fp_h])
+        rotate([90,0,0])
+            bolt(d=3);
+    }
+    _fp_cut();
+    mirror([1,0,0])
+        _fp_cut();
+}
+
+module xb_fp_bolts() {
+    module _fp_bolt() {
+        translate([d_m_fp_w,-50-3,d_m_fp_h])
+        rotate([-90,0,0])
+            bolt_shcs_m3(h=6);
+    }
+    _fp_bolt();
+    mirror([1,0,0])
+        _fp_bolt();
+}
+
 module xb_fp() {
     t = d_m_he_h+2;
     l = d_cr_wt/2-6.5;
@@ -26,5 +48,6 @@ module xb_fp() {
         }
         translate([0,-41,-7])
             xb_fh_2510_cut();
+        xb_fp_cut();
     }
 }

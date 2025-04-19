@@ -5,6 +5,7 @@ module xb_hardware() {
     color(c_yl) xb_du_bolts();
     color(c_yl) xb_fh_bolts();
     color(c_yl) xb_cr_belt_pin();
+    color(c_yl) xb_fp_bolts();
 
 }
 
@@ -41,10 +42,13 @@ module palladium() {
     color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_uhf();
     color(c_ll) xb_pr_klicky_pcb();
+    color(c_sl) xb_fp_cam_uhf();
+    color(c_sl) xb_fp_led();
     color(c_sl) xb_fp();
     mgn12();
     xb_hardware();
     translate([0,-21.5,-56])
+    rotate([0,0,90])
         color([0.8,0.1,0.1,0.5]) ven_hotend_chube();
 }
 

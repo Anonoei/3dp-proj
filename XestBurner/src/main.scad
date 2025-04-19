@@ -43,3 +43,7 @@ include <./extruders/sherpa_mini.scad>
 
 // ----- Hotends ----- //
 include <./hotends/chube.scad>
+
+// ----- Faceplates ----- //
+include <./faceplates/led.scad>
+include <./faceplates/nozzle_cam.scad>
