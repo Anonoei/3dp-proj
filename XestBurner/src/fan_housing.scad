@@ -29,11 +29,11 @@ module xb_du_bolts() {
 
 module xb_fh_bolt_cut() {
     module _xb_fh_bolt() {
-        translate([-d_max_w/2,0,d_m_fh_h-5])
+        translate([-d_max_w/2,-2,d_m_fh_h-5])
         translate([14,40,0])
         rotate([90,90,0])
         translate([-5.5,2,0]) {
-            bolt(d=3);
+            bolt(d=3, h=12);
             translate([0,0,3+5])
                 bolt(d=6, h=12);
         }
@@ -97,18 +97,19 @@ module xb_fh_4010_cut() {
         _4010_base();
 }
 
+module _xb_fh_cr_mount() {
+    translate([-14,37,d_m_fh_h-4])
+    rotate([0,0,-45])
+    difference() {
+        rotate([0,0,45])
+            cube([5,5,8]);
+        translate([-0.01, -0.01, -0.01])
+        cube([10,10,10]);
+    }
+}
+
 module xb_fh() {
     module _xb_fh_4010() {
-        module _xb_4010_mount() {
-            translate([-14,37,d_m_fh_h-4])
-            rotate([0,0,-45])
-            difference() {
-                rotate([0,0,45])
-                    cube([5,5,8]);
-                translate([-0.01, -0.01, -0.01])
-                cube([10,10,10]);
-            }
-        }
         module _xb_4010_base() {
             translate([d_max_w/2-14,42+0.01,6.5])
             rotate([90,90,0]) {
@@ -118,7 +119,7 @@ module xb_fh() {
                         cube([20,12,42-5]);
                 }
             }
-            _xb_4010_mount();
+            _xb_fh_cr_mount();
         }
 
         difference() {
@@ -157,6 +158,8 @@ module xb_fh() {
             );
     }
 
+    // _xb_fh_2510();
+
     difference() {
         translate([0,-42.01 - d_cr_d,-.5])
         union() {
@@ -169,5 +172,29 @@ module xb_fh() {
             _xb_fh_wire();
         translate([-20,-10+0.01,-15])
         cube([40,4,14]);
+    }
+
+
+}
+
+module xb_fh_brace() {
+    module _fh_brace() {
+        difference() {
+            translate([-d_m_fh_w/2-1.5,-d_cr_d-5-0.02,d_m_fh_h-4.5+0.01])
+                cube([d_m_fh_w/2+2,5,8-0.02]);
+            translate([0,-42.01 - d_cr_d,-1])
+                _xb_fh_cr_mount();
+            translate([0,-42.01 - d_cr_d,1])
+                _xb_fh_cr_mount();
+            translate([0,-21.5,-40])
+                cylinder(d=30,h=50);
+            translate([0,-42.01 - d_cr_d,-.5])
+                xb_fh_bolt_cut();
+        }
+    }
+    union() {
+        _fh_brace();
+        mirror([1,0,0])
+            _fh_brace();
     }
 }

@@ -24,6 +24,7 @@ module xb() {
     color(c_gl) xb_em();
     color(c_rl) xb_he();
     color(c_cl) xb_fh();
+    color(c_y) xb_fh_brace();
     color(c_ol) xb_du_hf();
     color(c_ll) xb_pr();
     color(c_sl) xb_fp();
@@ -37,6 +38,7 @@ module palladium() {
     color(c_gl) xb_em_sherpa_mini();
     color(c_rl) xb_he_chube();
     color(c_cl) xb_fh();
+    color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_uhf();
     color(c_ll) xb_pr_klicky_pcb();
     color(c_sl) xb_fp();

@@ -31,7 +31,7 @@ module xb_he_mount() {
     module _xb_he_mount() {
         translate([d_m_he_w/2-5,-54,d_m_he_h+5])
         rotate([0,75,0])
-            cube([15,24,10]);
+            cube([15,24,12]);
     }
     union() {
         _xb_he_mount();
@@ -43,10 +43,12 @@ module xb_he_mount() {
 
 module xb_he() {
     module _xb_he_base() {
-        translate([0,-30-d_cr_d,d_cr_ht-5])
-            cube([d_cr_wt/2+2,28,5]); // Top
-        translate([d_cr_wt/2-12,-30-d_cr_d,d_cr_ht-5-4.5])
-            cube([10+4,28,4.5]); // Bottom
+        translate([0,-28-d_cr_d-2,d_cr_ht-5])
+            cube([d_cr_wt/2+2+2,28,5]); // Top
+        translate([d_cr_wt/2-12,-28-d_cr_d-2,d_cr_ht-5-4.5])
+            cube([10+4+2,28,4.5]); // Bottom
+        translate([d_cr_wt/2+2,-22-d_cr_d-2,d_cr_ht-5-10])
+            cube([2,22,6]); // Side
         difference() { // 2510 Press
             translate([0,-36,d_cr_ht-5-8])
                 cube([14,5,8]);
@@ -77,7 +79,7 @@ module xb_he() {
             cube([2,4,12]); // Right EM cutout
         translate([-d_cr_wt/2-2.01,-d_cr_d-2-4+0.01,d_cr_ht-10-0.01])
             cube([2,4,12]); // Left EM cutout
-        translate([-d_cr_wt/2-4,-d_cr_d-20,d_cr_ht-10-0.01])
-            cube([d_cr_wt+8,6,5]); // Wire cutout
+        translate([-d_cr_wt/2-6,-d_cr_d-20,d_cr_ht-15-0.01])
+            cube([d_cr_wt+12,6,10]); // Wire cutout
     }
 }
