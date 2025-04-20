@@ -1,5 +1,5 @@
 module xb_em_cut() {
-    translate([0,-21.5,0])
+    translate([0,d_he_c,0])
     cylinder(h=50,d=4.5);
 }
 
@@ -27,7 +27,7 @@ module xb_em() {
             xb_em_cut();
             xb_cr_hs_he();
             xb_cr_pr_wire_cut();
-            translate([0,-21.5,0.5])
+            translate([0,d_he_c,0.5])
                 cylinder(d=32,h=10);
         }
     }

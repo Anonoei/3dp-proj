@@ -69,7 +69,7 @@ module xb_he() {
                 _xb_he_base();
         }
         xb_em_cut();
-        translate([0,-21.5,0.5-0.01])
+        translate([0,d_he_c,0.5-0.01])
             cylinder(d=32,h=10);
         xb_cr_hs_he();
         xb_he_mount();

@@ -20,10 +20,10 @@ module xb_fp_bolts() {
         _fp_bolt();
 }
 
-module xb_fp_hf(bo=-9) {
+module xb_fp() {
     t = d_m_he_h+2;
     l = d_cr_wt/2-6.5;
-    b = d_m_fh_h+bo;
+    b = d_m_fh_h-12;
     r = -l;
     module _fp() {
         translate([0,-48,0])
@@ -50,8 +50,4 @@ module xb_fp_hf(bo=-9) {
             xb_fh_2510_cut();
         xb_fp_cut();
     }
-}
-
-module xb_fp_uhf() {
-    xb_fp_hf(bo=-12);
 }

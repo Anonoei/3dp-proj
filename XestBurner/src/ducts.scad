@@ -1,26 +1,31 @@
 module xb_du_duct() {
     module _duct_cyd() {
-        translate([d_max_w/2-10,-d_cr_d,-38+3])
-        rotate([90,0,0])
+        module _cyd_cut() {
+            translate([5,-d_cr_d-45,-38])
+                cube([25,46,20]); // Top
+            translate([5,-d_cr_d-45,-50])
+                cube([14,46,20]); // Inner
+            translate([28,-d_cr_d-45,-50])
+                cube([14,46,20]); // Outer
+            translate([5,-d_cr_d-45,-51])
+                cube([25,46,5]); // Bottom
+        }
+
         difference() {
-            translate([-1,-1,0])
-            cylinder(d=22, h=44);
-            translate([0,10,16])
-                cube([32,20,60], center=true);
-            translate([-17,0,16])
-                cube([32,20,60], center=true);
-            translate([-15,-11,20])
-            rotate([0,0,30])
-                cube([32,30,60], center=true);
+            translate([d_max_w/2-10,-d_cr_d,-36])
+            rotate([90,0,0])
+            translate([0,0,0])
+                cylinder(d=22, h=44-0.01);
+            _cyd_cut();
         }
     }
     module _duct_ext() {
-        translate([14,-44-6,-40+3])
+        translate([14,-44-6,-40])
             cube([4,44,2]);
-        translate([16.75,-28,-44-0.1+3])
-            cube([9.5,44,10], center=true);
-        // translate([8,-50,-49.1])
-        //     cube([6,10,10]);
+        translate([16.75,-28,-42])
+            cube([9.5,44,8], center=true);
+        translate([16.75,-28,b_hf+2+4])
+            cube([9.5,44,4], center=true);
     }
 
     union() {
@@ -125,25 +130,26 @@ module xb_du_hf() {
                 xb_du_mount();
             }
         }
+        translate([0,0,-.5])
         xb_du_path();
     }
 }
 
 module xb_du_uhf() {
     module _du_ext() {
-        translate([12,-50,-46])
+        translate([12,-50,-48])
             cube([2,10,10]);
         difference() {
-            translate([12,-28,-46])
-                cube([2,22,8]);
+            translate([12,-30,-48])
+                cube([2,24,10]);
             translate([11.01,-33,-50])
                 rotate([45,0,0])
                     cube([4,30,20]);
         }
-        translate([14,-50,-44])
-            cube([12,44,6]);
-        translate([26,-50,-44])
-            cube([2,44,4]);
+        translate([14,-50,-48])
+            cube([12,44,10]); // Main extension
+        translate([26,-50,-48])
+            cube([2,44,8]); // Outer
     }
 
     difference() {
@@ -155,14 +161,14 @@ module xb_du_uhf() {
                 xb_du_mount();
             }
 
-            translate([0,0,-6]) {
+            translate([0,0,-hf_uhf]) {
                 xb_du_duct();
                 mirror([1,0,0]) {
                     xb_du_duct();
                 }
             }
         }
-        translate([0,0,-6])
+        translate([0,0,-hf_uhf-.5])
             xb_du_path();
     }
 }

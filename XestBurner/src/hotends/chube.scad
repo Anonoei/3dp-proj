@@ -13,7 +13,7 @@ module xb_he_chube() {
     // }
     difference() {
         xb_he();
-        translate([0,-21.5,-55.7])
+        translate([0,d_he_c,-55.7])
         rotate([0,0,90])
             ven_hotend_chube(true);
     }

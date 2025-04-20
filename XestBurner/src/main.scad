@@ -44,6 +44,7 @@ include <./extruders/sherpa_mini.scad>
 // ----- Hotends ----- //
 include <./hotends/chube.scad>
 include <./hotends/dragonfly_bmo.scad>
+include <./hotends/rapido.scad>
 
 // ----- Faceplates ----- //
 include <./faceplates/led.scad>

@@ -9,7 +9,7 @@ module xb_em_sherpa_mini() {
     }
 
     module _em_hs() {
-        translate([m_o,-21.5,d_cr_ht])
+        translate([m_o,d_he_c,d_cr_ht])
             heatset_m3x4(H=2);
     }
 

@@ -186,7 +186,7 @@ module xb_fh_brace() {
                 _xb_fh_cr_mount();
             translate([0,-42.01 - d_cr_d,1])
                 _xb_fh_cr_mount();
-            translate([0,-21.5,-40])
+            translate([0,d_he_c,-40])
                 cylinder(d=30,h=50);
             translate([0,-42.01 - d_cr_d,-.5])
                 xb_fh_bolt_cut();

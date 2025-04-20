@@ -27,7 +27,7 @@ module xb_b_uhf() {
 
 // Fan Housing
 module xb_b_fh() {
-    translate([0,-21.5,-4])
+    translate([0,d_he_c,-4])
     translate([0,-20.25,-2.5])
         color([0.1,0.1,0.1,0.4]) cube([25,10,25], center=true);
 }

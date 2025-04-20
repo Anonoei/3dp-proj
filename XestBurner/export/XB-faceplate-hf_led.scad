@@ -1,4 +1,4 @@
 include <../src/main.scad>
 
 rotate([90,0,0])
-xb_fp_led(true);
+xb_fp_led_hf(true);
