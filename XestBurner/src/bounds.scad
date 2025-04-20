@@ -15,6 +15,16 @@ module xb_b_he() {
     }
 }
 
+module xb_b_hf() {
+    translate([0,-15.5-d_cr_d,b_hf])
+    color([0.8,0.1,0.1,0.2]) cylinder(d=20,h=2);
+}
+
+module xb_b_uhf() {
+    translate([0,0,-8.5]) // uhf -8.5
+    xb_b_hf();
+}
+
 // Fan Housing
 module xb_b_fh() {
     translate([0,-21.5,-4])

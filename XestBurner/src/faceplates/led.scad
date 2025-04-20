@@ -18,7 +18,7 @@ module xb_fp_led(i=false) {
         translate([5,-2.5,0]) // Right
             cube([2,9,2],center=true);
         translate([0,-50,-39.38]) // Front
-            cube([12,2.1,14]);
+            cube([12,2.1,18]);
     }
 
     module _led() {

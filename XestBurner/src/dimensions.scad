@@ -1,3 +1,6 @@
+hf_uhf = 8.5;
+b_hf = 4-45.5-6-2; // +4mm,-45.5 (hf),-6 (nozzle)
+
 // ----- Carriage ----- //
 d_max_w = 56;
 d_max_h = 65;

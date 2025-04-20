@@ -1,6 +1,6 @@
 module xb_du_duct() {
     module _duct_cyd() {
-        translate([d_max_w/2-10,-d_cr_d,-38])
+        translate([d_max_w/2-10,-d_cr_d,-38+3])
         rotate([90,0,0])
         difference() {
             translate([-1,-1,0])
@@ -15,9 +15,9 @@ module xb_du_duct() {
         }
     }
     module _duct_ext() {
-        translate([14,-44-6,-40])
+        translate([14,-44-6,-40+3])
             cube([4,44,2]);
-        translate([16.75,-28,-44-0.1])
+        translate([16.75,-28,-44-0.1+3])
             cube([9.5,44,10], center=true);
         // translate([8,-50,-49.1])
         //     cube([6,10,10]);

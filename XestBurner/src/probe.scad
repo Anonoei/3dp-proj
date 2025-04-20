@@ -2,7 +2,7 @@ module xb_pr() {
     module _xb_pr_bolt() {
         translate([(d_cr_pr_o-d_cr_pr_w)/2, d_cr_d/2+d_cr_pr_d-d_m_pr_o-3,(-d_cr_hb + d_cr_pr_h)]) {
             translate([0,0,-5])
-                bolt_shcs_m3(h=20,v=true,hh=20);
+                bolt_shcs_m3(h=20,v=true,he=20);
         }
     }
     module _xb_pr_mount() {

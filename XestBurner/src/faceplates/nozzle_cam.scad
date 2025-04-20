@@ -44,7 +44,7 @@ module xb_fp_cam_hf(i=false) {
     }
     translate([0,-49,-35])
         cube([8,2,8], center=true);
-    translate([0,0,-48])
+    translate([0,0,b_hf+10])
         _fp_cam();
 }
 
@@ -52,6 +52,7 @@ module xb_fp_cam_uhf(i=false) {
     if (i) {
         xb_fp();
     }
+    translate([0,0,-hf_uhf])
     xb_fp_cam_hf();
     translate([0,-49,-28])
         cube([8,2,8], center=true);
