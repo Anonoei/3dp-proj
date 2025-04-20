@@ -130,7 +130,7 @@ module xb_du_hf() {
                 xb_du_mount();
             }
         }
-        translate([0,0,-.5])
+        translate([0,0,-1.5])
         xb_du_path();
     }
 }
@@ -168,7 +168,7 @@ module xb_du_uhf() {
                 }
             }
         }
-        translate([0,0,-hf_uhf-.5])
+        translate([0,0,-hf_uhf-1.5])
             xb_du_path();
     }
 }

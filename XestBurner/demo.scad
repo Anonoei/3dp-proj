@@ -30,7 +30,7 @@ module xb_base() {
     color(c_y) xb_fh_brace();
     color(c_ol) xb_du_hf();
     color(c_ll) xb_pr();
-    color(c_sl) xb_fp_hf();
+    color(c_sl) xb_fp();
     color(c_pl) xb_cr();
     xb_hardware();
 }
@@ -42,9 +42,8 @@ module xb_pfa() {
     color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_hf();
     color(c_ll) xb_pr_klicky_pcb();
-    color(c_sl) xb_fp_cam_hf();
-    color(c_sl) xb_fp_led();
-    color(c_sl) xb_fp_hf();
+    color(c_sl) xb_fp_led_hf();
+    color(c_sl) xb_fp();
     mgn9();
     xb_hardware();
     translate([0,d_he_c,d_he_hf])
@@ -60,8 +59,8 @@ module mercury() {
     color(c_ol) xb_du_hf();
     color(c_ll) xb_pr_klicky_pcb();
     color(c_sl) xb_fp_cam_hf();
-    color(c_sl) xb_fp_led();
-    color(c_sl) xb_fp_hf();
+    color(c_sl) xb_fp_led_hf();
+    color(c_sl) xb_fp();
     mgn9();
     xb_hardware();
     translate([0,d_he_c,d_he_hf])
@@ -88,11 +87,7 @@ module palladium() {
     xb_b_uhf();
 }
 
-difference() {
-    // xb_pfa();
+translate([32,0,0])
+    xb_base();
+translate([-32,0,0])
     palladium();
-    // mercury();
-    // translate([-10,-100,-80])
-    // rotate([0,0,-10])
-    //     color([0.4,0,0.4,0.4]) cube([200,200,200]);
-}
