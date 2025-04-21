@@ -41,7 +41,7 @@ module xb_pfa() {
     color(c_cl) xb_fh();
     color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_hf();
-    color(c_ll) xb_pr_klicky_pcb();
+    color(c_ll) xb_pr_klicky_pcb_hf();
     color(c_sl) xb_fp_led_hf();
     color(c_sl) xb_fp();
     mgn9();
@@ -57,7 +57,7 @@ module mercury() {
     color(c_cl) xb_fh();
     color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_hf();
-    color(c_ll) xb_pr_klicky_pcb();
+    color(c_ll) xb_pr_klicky_pcb_hf();
     color(c_sl) xb_fp_cam_hf();
     color(c_sl) xb_fp_led_hf();
     color(c_sl) xb_fp();
@@ -75,7 +75,7 @@ module palladium() {
     color(c_cl) xb_fh();
     color(c_y)  xb_fh_brace();
     color(c_ol) xb_du_uhf();
-    color(c_ll) xb_pr_klicky_pcb();
+    color(c_ll) xb_pr_klicky_pcb_uhf();
     color(c_sl) xb_fp_cam_uhf();
     color(c_sl) xb_fp_led_uhf();
     color(c_sl) xb_fp();
@@ -87,7 +87,10 @@ module palladium() {
     xb_b_uhf();
 }
 
-translate([32,0,0])
-    xb_base();
-translate([-32,0,0])
-    palladium();
+module demo() {
+    translate([32,0,0])
+        xb_base();
+    translate([-32,0,0])
+        palladium();
+}
+demo();
