@@ -21,7 +21,7 @@ module amd_mi50_rear_mount() {
         _base();
         translate([0,-5,0])
         mi50_body_rear_bolts();
-        // translate([-1.5,-5,0])
-        //     ven_fan4020(cut=true);
+        translate([-1.5,-5,0])
+            ven_fan4020(cut=true);
     }
 }
