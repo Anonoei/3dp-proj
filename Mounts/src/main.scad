@@ -8,4 +8,4 @@ include <../../ref/components.scad>
 include <../../ref/vendor.scad>
 
 // Components
-include <./mi50.scad>
+include <./mi50/mi50.scad>
