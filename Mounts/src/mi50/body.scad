@@ -20,11 +20,11 @@ module mi50_body_rear_mount() {
 module mi50_body_rear_bolts() {
     translate([0,10-1,0])
     rotate([90,0,0]) {
-        translate([28,4,0])
+        translate([28,6,0])
             cylinder(d=3,h=10);
-        translate([28,4+16,0])
+        translate([28,6+16.5,0])
             cylinder(d=3,h=10);
-        translate([28,4+16+16,0])
+        translate([28,6+16.5+16.5,0])
             cylinder(d=3,h=10);
 
         translate([25,mi50_h-1.5-4,0])
