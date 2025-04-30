@@ -14,8 +14,10 @@ module amd_mi50_rear_mount() {
             cube([4,d,40]);
 
 
+        translate([0,0,21])
+            cube([25,5,21]);
         translate([0,0,0])
-            cube([25,5,42]);
+            cube([15,5,21]);
     }
     difference() {
         _base();
