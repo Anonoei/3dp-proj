@@ -1,13 +1,13 @@
 $fa = 1;
 $fs = 0.4;
 
-include <../../ref/globals.scad>
-include <../../ref/colors.scad>
+include <../../scadboil/ref/globals.scad>
+include <../../scadboil/ref/colors.scad>
 
-include <../../lib/Chamfer.scad>
+include <../../scadboil/lib/Chamfer.scad>
 
-include <../../ref/components.scad>
-include <../../ref/vendor.scad>
+include <../../scadboil/ref/components.scad>
+include <../../scadboil/ref/vendor.scad>
 
 // ----- Base components ----- //
 include <./dimensions.scad>

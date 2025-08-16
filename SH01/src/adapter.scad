@@ -1,4 +1,4 @@
-include <../../lib/Chamfer.scad>
+include <../../scadboil/ext/Chamfer.scad>
 
 ad_ch = 0.6;
 

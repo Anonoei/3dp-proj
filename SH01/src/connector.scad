@@ -1,4 +1,4 @@
-include <../../lib/threads.scad>
+include <../../scadboil/ext/threads.scad>
 
 th_thread = 6;
 th_height = 4;

@@ -9,10 +9,10 @@ d_tb_m_o = 18;
 d_tb_m_x = 16;
 d_tb_m_y = 9;
 
-include <../../ref/globals.scad>
-include <../../ref/colors.scad>
+include <../../scadboil/ref/globals.scad>
+include <../../scadboil/ref/colors.scad>
 
-include <../../lib/Chamfer.scad>
+include <../../scadboil/ext/Chamfer.scad>
 
 // --- components --- //
 include <outer.scad>

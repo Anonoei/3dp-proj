@@ -1,0 +1,3 @@
+[submodule "scadboil"]
+	path = scadboil
+	url = https://github.com/anonoei/scadboil

@@ -1,4 +1,4 @@
-include <../../lib/threads.scad>
+include <../../scadboil/ext/threads.scad>
 
 module tb_inner_PC4_M6() {
     ScrewHole(6, d_tb_h, pitch=0, tooth_angle=30, tolerance=0.4)

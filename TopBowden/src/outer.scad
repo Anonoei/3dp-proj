@@ -22,7 +22,7 @@ module _tb_base() {
     }
 }
 
-include <../../ref/components.scad>
+include <../../scadboil/ref/components.scad>
 
 module tb_outer_m3() {
     difference() {
